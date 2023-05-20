@@ -1,0 +1,61 @@
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+  border: 2px solid #1b0f0f;
+  padding: 3%;
+}
+
+.head{
+  background-color: yellow;
+  color: #f44336;
+  border: 2px solid #1b0f0f;
+  margin-bottom: 10px;
+}
+
+
+.form-group {
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color:skyblue;
+  border: 2px solid #1b0f0f;
+}
+
+
+
+.form-group label {
+  display:inline-block;
+  width: 120px;
+  text-align: right;
+  padding-right: 10px;
+  font-size: larger;
+  /* border: 1px solid #ccc; */
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group select {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.form-group input[type="checkbox"],
+.form-group input[type="radio"] {
+  display:list-item;
+  /* margin-right: 5px; */
+}
+
+.form-group button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+}
+
+.form-group button[type="reset"] {
+  background-color: #f44336;
+}
