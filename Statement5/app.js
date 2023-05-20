@@ -171,8 +171,15 @@ app.put("/updateSong/:id", async (req, res) => {
       if (!song) {
         return res.status(404).send("Song not found");
       }
-  
-      res.redirect("/songs");
+
+      Song.find()
+        .then((songs) => {
+          res.render("songs", { songs: songs, totalCount: songs.length });
+        })
+        .catch((err) => {
+          res.status(500).send("Error retrieving songs details");
+        });
+
     } catch (err) {
       res.status(500).send("Error updating song");
     }
