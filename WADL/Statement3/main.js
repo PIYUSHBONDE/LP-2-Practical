@@ -1,12 +1,17 @@
-let fetchData = () => {
-    let httprequest = new XMLHttpRequest()
-    httprequest.open("GET", "https://jsonplaceholder.typicode.com/users/")
-    httprequest.send()
-    httprequest.onload = () => {
-        let res = JSON.parse(httprequest.responseText)
-        console.log(res)
-        localStorage.setItem("users", JSON.stringify(res))
-        displayData()
+let fetchData = () => {             
+    let storedUser = localStorage.getItem("users");
+    if (storedUser) {
+        displayData(JSON.parse(storedUser));
+    } else {
+        let httprequest = new XMLHttpRequest();
+        httprequest.open("GET", "https://jsonplaceholder.typicode.com/users");
+        httprequest.send();
+        httprequest.onload = () => {
+            let res = JSON.parse(httprequest.responseText);
+            console.log(res);
+            localStorage.setItem("users", JSON.stringify(res));
+            displayData(res);
+        };
     }
 }
 

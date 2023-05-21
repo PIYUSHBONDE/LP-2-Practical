@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+        table, th, td {
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Country</th>
+                    <th>Website</th>
+                    <th>Code</th>
+                    <th>State Province</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for university in universities %}
+                <tr>
+                    <td>{{ university.name }}</td>
+                    <td>{{ university.country }}</td>
+                    <td>
+                        {% for web_page in university.web_pages %}
+                            <a href="{{ web_page }}">{{ web_page }}</a><br>
+                        {% endfor %}
+                    </td>
+                    <td>{{ university.alpha_two_code }}</td>
+                    <td>{{ university.state_province }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
