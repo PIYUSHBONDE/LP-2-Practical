@@ -1,0 +1,27 @@
+GAE ERROR:
+
+# refreshing the repositories
+sudo apt update
+# its wise to keep the system up to date!
+# you can skip the following line if you not
+# want to update all your software
+sudo apt upgrade
+# installing python 2.7 and pip for it
+sudo apt install python2.7 python-pip
+# installing python-pip for 3.6
+sudo apt install python3-pip
+
+RedHat: 
+
+only ssh works, keep the key value pem file safely
+
+Angular:
+
+2 terminals: First cd into user app for both
+
+1 for npm i and npm start
+
+1 for angular commands: 
+
+	npm i -g json-server
+	json-server --watch db.json
